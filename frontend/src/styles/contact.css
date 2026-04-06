@@ -1,0 +1,50 @@
+/* contact page styles */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important; 
+  gap: 15px; 
+  margin: -60px auto 40px; 
+  max-width: 1200px; 
+  padding: 0 15px;
+  width: 95%;
+}
+
+/* Cards */
+.contact-info-card {
+  background: white;
+  padding: 20px 10px; 
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: transform 0.3s;
+  min-width: 0;
+}
+
+/* Icons aur Text adjust  */
+.contact-icon {
+  font-size: 20px; 
+  margin-bottom: 10px;
+}
+
+.contact-info-card h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.contact-info-card p {
+  font-size: 0.8rem; 
+  margin: 2px 0;
+}
+
+@media (max-width: 1024px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(2, 1fr) !important; 
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
