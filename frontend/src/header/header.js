@@ -5,15 +5,10 @@ export default function Header() {
   const navigate = useNavigate();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
 
   const toggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
-  };
-
-  const toggleProfileMenu = () => {
-    setShowProfileMenu(!showProfileMenu);
   };
 
   const toggleMobileDropdown = () => {

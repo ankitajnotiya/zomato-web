@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaPaperPlane, FaCheck, FaArrowLeft } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaArrowLeft, FaPaperPlane } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import '../styles/myorder.css';
 import Footer from '../footer/footer';
@@ -7,7 +7,6 @@ import '../footer/footer.css';
 import Header from '../header/header';
 import '../header/header.css';
 import Chat from '../components/Chat';
-import Arrow, { ScrollToTopArrow } from '../components/Arrow';
 
 export default function ContactForm() {
   const navigate = useNavigate();
@@ -311,7 +310,7 @@ export default function ContactForm() {
       
       <Footer />
       <Chat />
-      <ScrollToTopArrow />
+      {/* <ScrollToTopArrow /> */}
     </div>
   );
 }

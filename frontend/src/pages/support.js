@@ -6,7 +6,6 @@ import '../footer/footer.css';
 import Header from '../header/header';
 import '../header/header.css';
 import Chat from '../components/Chat';
-import Arrow, { ScrollToTopArrow } from '../components/Arrow';
 
 export default function Support() {
   const [expandedFaq, setExpandedFaq] = useState(null);
@@ -134,7 +133,7 @@ export default function Support() {
       
       <Footer />
       <Chat />
-      <ScrollToTopArrow />
+      {/* <ScrollToTopArrow /> */}
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { FaArrowLeft, FaStar, FaFilter, FaChevronRight, FaTimes, FaShoppingCart } from 'react-icons/fa';
+import { FaArrowLeft, FaStar, FaFilter, FaChevronRight, FaTimes } from 'react-icons/fa';
 import '../styles/collectionDetails.css';
 import Footer from '../footer/footer';
 import Chat from '../components/Chat';
-import { ScrollToTopArrow } from '../components/Arrow';
 import Header from '../header/header';
 
 export default function CollectionDetails() {
   const { collectionId } = useParams();
   const [activeFilters, setActiveFilters] = useState([]);
+  const [cart, setCart] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [selectedDish, setSelectedDish] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -17,7 +17,6 @@ export default function CollectionDetails() {
   const [address, setAddress] = useState('');
   const [paymentDetails, setPaymentDetails] = useState('');
   const [orderSuccess, setOrderSuccess] = useState(false);
-  const [cart, setCart] = useState([]);
   
   // Scroll to top on page load
   useEffect(() => {
@@ -33,50 +32,24 @@ export default function CollectionDetails() {
     );
   };
 
-  const handleAddToCart = (restaurant) => {
-    const existingItem = cart.find(item => item.name === restaurant.name);
-    
-    if (existingItem) {
-      setCart(cart.map(item => 
-        item.name === restaurant.name 
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      setCart([...cart, { ...restaurant, quantity: 1 }]);
-    }
-    
-    alert(`${restaurant.name} added to cart!`);
-  };
-
   const handleOrderClick = (restaurant) => {
     setSelectedDish(restaurant);
     setShowModal(true);
+    setQuantity(1);
   };
 
   const handleSubmitOrder = () => {
     if (fullName && address && paymentDetails) {
       setOrderSuccess(true);
+      setShowModal(false);
       setSelectedDish(null);
       setFullName('');
       setAddress('');
       setPaymentDetails('');
       setQuantity(1);
-      setShowModal(false);
     } else {
       alert('Please fill all fields');
     }
-  };
-
-  const showToast = (message) => {
-    const toast = document.createElement('div');
-    toast.className = 'toast-notification';
-    toast.textContent = message;
-    document.body.appendChild(toast);
-    
-    setTimeout(() => {
-      toast.remove();
-    }, 3000);
   };
 
   const collections = {
@@ -435,7 +408,7 @@ const restaurants = [
       </div>
       <Footer />
       <Chat />
-      <ScrollToTopArrow showBelow={200} />
+      {/* <ScrollToTopArrow showBelow={200} /> */}
     </>
   );
 }

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowLeft, FaCheckCircle, FaTimesCircle, FaEdit, FaSave, FaQrcode } from 'react-icons/fa';
+import { FaArrowLeft, FaTimesCircle, FaEdit, FaSave, FaQrcode } from 'react-icons/fa';
 import '../styles/myorder.css';
 import Footer from '../footer/footer';
 import '../footer/footer.css';
 import Header from '../header/header';
 import '../header/header.css';
 import Chat from '../components/Chat';
-import Arrow from '../components/Arrow';
-import ScrollToTopArrow from '../components/Arrow';
 
 export default function MyOrder() {
   useEffect(() => {
@@ -291,7 +289,7 @@ export default function MyOrder() {
       
       <Footer />
       <Chat />
-      <ScrollToTopArrow />
+      {/* <ScrollToTopArrow /> */}
     </div>
   );
 }

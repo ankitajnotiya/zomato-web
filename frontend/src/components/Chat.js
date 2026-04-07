@@ -22,12 +22,6 @@ export default function Chat() {
     }, 1000);
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      handleMessageSend();
-    }
-  };
-
   return (
     <div className="chat-component">
       <button className="chat-toggle-btn" onClick={() => setIsOpen(!isOpen)}>

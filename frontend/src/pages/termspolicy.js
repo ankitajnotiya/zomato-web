@@ -6,7 +6,6 @@ import '../footer/footer.css';
 import Header from '../header/header';
 import '../header/header.css';
 import Chat from '../components/Chat';
-import Arrow, { ScrollToTopArrow } from '../components/Arrow';
 
 export default function Terms() {
   const navigate = useNavigate();
@@ -120,7 +119,7 @@ export default function Terms() {
       
       <Footer />
       <Chat />
-      <ScrollToTopArrow />
+      {/* <ScrollToTopArrow /> */}
     </div>
   );
 }

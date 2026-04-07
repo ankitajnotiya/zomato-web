@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiArrowUp, FiArrowDown, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import { FiArrowUp } from 'react-icons/fi';
 import '../styles/chat-arrow.css';
 
 export default function Arrow({ 

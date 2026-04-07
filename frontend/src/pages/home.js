@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import Chat from '../components/Chat';
-import Arrow, { ScrollToTopArrow } from '../components/Arrow';
 import '../styles/termspolicy.css';
 import '../header/header.css';
 import '../footer/footer.css';
@@ -19,14 +18,12 @@ export default function Home() {
   }, []);
 
   const [showModal, setShowModal] = useState(false);
-  const [rotating, setRotating] = useState(false);
   const [selectedDish, setSelectedDish] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [fullName, setFullName] = useState('');
   const [address, setAddress] = useState('');
   const [paymentDetails, setPaymentDetails] = useState('');
   const [orderSuccess, setOrderSuccess] = useState(false);
-  const [animate, setAnimate] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [selectedArea, setSelectedArea] = useState('');
   const [selectedCity, setSelectedCity] = useState('indore');
@@ -63,34 +60,7 @@ export default function Home() {
   const [orderHistory, setOrderHistory] = useState([]);
   const videoRef = useRef(null);
 
-  const openLoginModal = () => setShowModal(true);
-  const closeLoginModal = () => setShowModal(false);
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    alert('Login functionality would be implemented here!');
-    closeLoginModal();
-  };
-
-  const handleRotate = () => {
-    setRotating(true);
-    setTimeout(() => setRotating(false), 1000);
-  };
-
-  const handleVideoClick = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setAnimate(true);
-      setTimeout(() => setAnimate(false), 1000);
-    }
-  };
-
   const handleSearchClick = () => {
-    handleSearch(searchQuery);
-  };
-
-  const handleSearchSubmit = (e) => {
-    e.preventDefault();
     handleSearch(searchQuery);
   };
 
@@ -1317,7 +1287,6 @@ Zomato is India's most loved food delivery and restaurant discovery platform. We
       
       <Footer />
       <Chat />
-      <ScrollToTopArrow />
       
       {/* Cart Sidebar - Only show when has items */}
       {cart.length > 0 && (
@@ -1645,7 +1614,6 @@ Zomato is India's most loved food delivery and restaurant discovery platform. We
       )}
       
       <Chat />
-      <ScrollToTopArrow />
       
       {/* Floating Action Buttons */}
       <div className="floating-actions">

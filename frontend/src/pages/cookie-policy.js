@@ -6,7 +6,6 @@ import '../footer/footer.css';
 import Header from '../header/header';
 import '../header/header.css';
 import Chat from '../components/Chat';
-import Arrow, { ScrollToTopArrow } from '../components/Arrow';
 
 export default function CookiePolicy() {
   const [cookiePreferences, setCookiePreferences] = useState({
@@ -269,7 +268,7 @@ export default function CookiePolicy() {
       
       <Footer />
       <Chat />
-      <ScrollToTopArrow />
+      {/* <ScrollToTopArrow /> */}
     </div>
   );
 }

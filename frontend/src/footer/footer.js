@@ -15,14 +15,14 @@ export default function Footer() {
               and dining experiences from thousands of restaurants nationwide.
             </p>
             <div className="app-buttons">
-              <a href="#" className="app-btn app-store">
+              <a href="https://apps.apple.com/app/zomato-food-delivery-dining/id434615311" className="app-btn app-store" target="_blank" rel="noopener noreferrer">
                 <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
                 alt="App Store" 
                 className="store-img"
               />
               </a>
-              <a href="#" className="app-btn google-play">
+              <a href="https://play.google.com/store/apps/details?id=com.application.zomato" className="app-btn google-play" target="_blank" rel="noopener noreferrer">
                 <img 
                 src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
                 alt="Google Play" 
