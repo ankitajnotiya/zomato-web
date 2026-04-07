@@ -1,9 +1,10 @@
 [build]
-  # Build command - React ko chhota aur fast banata hai
-  command = "cd frontend && npm run build"
-  
-  # Publish directory - Yahan se Netlify files lega
-  publish = "frontend/build"
+  # Build from frontend directory
+  base = "frontend"
+  # Install dependencies and build
+  command = "npm install && npm run build"
+  # Publish from build folder
+  publish = "build"
 
 # Environment variables (agar zaroorat ho)
 [build.environment]
